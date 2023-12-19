@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGAI</title>
+  <link rel="stylesheet" href="sigai.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#" class="logo">
+      <img src="logo.png" alt="Your Website Logo">
+    </a>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Membership</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Road to AI</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Blogs</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">AI Crunch</a></li>
+    </ul>
+  </nav>
+  
+  <div class="parallax">
+    <img src="main.png" class="object" data-value="0.5"/>
+    <img src="comp1.png" class="object" data-value="2"/>
+    <img src="comp2.png" class="object" data-value="4"/>
+    <img src="comp3.png" class="object" data-value="3"/>
+    <img src="rect1.png" class="object" data-value="5"/>
+    <img src="rect2.png" class="object" data-value="-6"/>
+    <img src="rect3.png" class="object" data-value="9"/>
+    <img src="rect4.png" class="object" data-value="7"/>
+    <img src="rect5.png" class="object" data-value="-4"/>
+  </div>
+
+  <script type="text/javascript">
+    document.addEventListener("mousemove",parallax);
+    function parallax(e){
+        document.querySelectorAll(".object").forEach(function(move){
+            var moving_value=move.getAttribute("data-value");
+            var x=(e.clientX*moving_value)/200;
+            var y=(e.clientY*moving_value)/250;
+
+
+            move.style.transform="translateX("+x+"px) translateY("+y+"px)";
+        });
+    }
+  </script>
+
+  <footer class="footer">
+    <div class="logo-container">
+      <img src="comb.png" alt="Your Logo">
+    </div>
+    <div class="credits">
+      Developed by Ayush, Siddharth, Kunal and Lalit
+    </div>
+  </footer>
+  
+  </body>
+</html>
